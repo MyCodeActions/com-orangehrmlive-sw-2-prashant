@@ -31,9 +31,9 @@ public class LoginTest extends BaseTest {
 
         driver.findElement(By.name("username")).sendKeys("Admin");
         driver.findElement(By.name("password")).sendKeys("admin123");
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
         String expectedText = "Dashboard";
-        String actualText = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[1]/span/h6")).getText();
+        String actualText = driver.findElement(By.xpath("//h6")).getText();
         Assert.assertEquals(expectedText, actualText);
     }
 

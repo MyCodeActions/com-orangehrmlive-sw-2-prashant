@@ -30,15 +30,15 @@ public class ForgotPasswordTest extends BaseTest {
     @Test
     public void userShouldNavigateToForgotPasswordPageSuccessfully() {
 
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[4]/p")).click();
+        driver.findElement(By.xpath("//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']")).click();
 
         String expectedText = "Reset Password";
-        String actualText = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div/form/h6")).getText();
+        String actualText = driver.findElement(By.xpath("//h6")).getText();
         Assert.assertEquals(expectedText, actualText);
 
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div/form/div[2]/button[1]")).click();
+        driver.findElement(By.xpath("//button[@type='button']")).click();
         String expectedTextForLogin = "Login";
-        String actualTextForLogin = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/h5")).getText();
+        String actualTextForLogin = driver.findElement(By.xpath("//h5")).getText();
         Assert.assertEquals(expectedText, actualText);
     }
 
